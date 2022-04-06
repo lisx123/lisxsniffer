@@ -8,7 +8,6 @@ import (
 )
 
 func CreateTree() fyne.CanvasObject {
-	// 这里会造成现成的相互等待
 	treedata := make(map[string][]string, 0)
 	treedata[""] = []string{"dataframe"}
 

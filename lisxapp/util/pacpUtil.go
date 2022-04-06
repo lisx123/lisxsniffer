@@ -61,21 +61,6 @@ func SetDev(dev string) {
 }
 
 func packetCap(dev string, ctx context.Context, a fyne.App) {
-	var (
-		eth    layers.Ethernet
-		ip4    layers.IPv4
-		ip6    layers.IPv6
-		tcp    layers.TCP
-		arp    layers.ARP
-		icmpv4 layers.ICMPv4
-		icmpv6 layers.ICMPv6
-		udp    layers.UDP
-
-		igmp layers.IGMP
-
-		igmpv1or2 layers.IGMPv1or2
-		payload   gopacket.Payload
-	)
 
 	var snapshot_len int32 = 1024
 	var promiscuous bool = false
@@ -284,7 +269,7 @@ func packetCap(dev string, ctx context.Context, a fyne.App) {
 			PacketIndex++
 
 			SwapChan <- res
-			// fmt.Printf("%p\n", &SwapChan)
+
 		}
 
 	}

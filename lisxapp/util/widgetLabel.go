@@ -37,10 +37,7 @@ func CreateLabel() fyne.CanvasObject {
 				lbl.Refresh()
 			}
 
-			// break
-
 		}
-		// return
 
 	}()
 

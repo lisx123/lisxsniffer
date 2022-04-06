@@ -126,7 +126,6 @@ func GetTreeData(packet gopacket.Packet, idx int) TreeDataStruct {
 	dlc = dlc.Put(&arp)
 	dlc = dlc.Put(&payload)
 	dlc = dlc.Put(&igmpv1or2)
-	// // 使用map类型是不是能级析出一个packet中包含哪些协议
 	decoder := dlc.LayersDecoder(layers.LayerTypeEthernet, gopacket.NilDecodeFeedback)
 	decoded := make([]gopacket.LayerType, 0, 20)
 	_, err := decoder(packet.Data(), &decoded)

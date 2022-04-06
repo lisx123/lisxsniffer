@@ -30,13 +30,7 @@ type TreeDataStruct struct {
 var Di = *NewDevInfo()
 var SelectedDev string
 
-// var rowdatas = [][]string{}
-
-// 用于保存index-packet对
-// var PacketMap = make(map[int][]gopacket.LayerType, 100)
 var PacketIndex = 0 //表示每一个包的序列号
-
-// type treeItem map[string][]string
 
 var Rowdatas [][]string
 var ErrChan chan error
@@ -67,10 +61,8 @@ var (
 
 var SwapChan chan RowData
 
-// var TreeDataSwapChan chan TreeDataStruct
 var TreeDataSwapChan = make(chan TreeDataStruct, 1)
 
-// var PacketDataShowChan chan []byte
 var PacketDataShowChan = make(chan []byte, 1)
 var IsStoped bool = false
 var Onclicked bool = false
@@ -79,7 +71,7 @@ var StartCount int = 0
 var Ctx context.Context
 var CancelF context.CancelFunc
 
-func InitVerb() (context.Context, context.CancelFunc) { // (context.Context, context.CancelFunc)
+func InitVerb() (context.Context, context.CancelFunc) {
 
 	Ctx, CancelF = context.WithCancel(context.Background())
 	tmpchan := make(chan RowData, 100)
